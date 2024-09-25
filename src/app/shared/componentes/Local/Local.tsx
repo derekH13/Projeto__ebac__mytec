@@ -11,6 +11,11 @@ function Local(){
                     no <span className="text--gradient bold">bairro são nicolau, rua igarapé n° 20 </span>
                     Estamos prontos para te atender.                         
                 </h2>
+
+                <span className="mobille local__alinhar__content__mobille">
+                  <img src="/assets/images/GPS.jpg" alt="" />
+                </span>
+
                 <p className='text'>
                 Estamos localizados no coração de São Paulo, no bairro São Nicolau, na Rua Igarapé, n° 20. A MYTEC tem mais de 4 anos de experiência no mercado, oferecendo consertos e vendas de aparelhos eletrônicos com qualidade e confiança. <br />
 
@@ -20,8 +25,8 @@ function Local(){
                 </p>
         </div>
 
-        <div className="local__alinhar__imagem">
-            <img src="/assets/images/local.png" alt="" />
+        <div className="local__alinhar__imagem desktop">
+            <img className='desktop' src="/assets/images/local.png" alt="" />
         </div>
       </div>
     </section>

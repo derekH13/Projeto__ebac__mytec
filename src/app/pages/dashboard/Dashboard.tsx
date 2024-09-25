@@ -16,9 +16,6 @@ export const Dashboard = () => {
     return(
         <section className="home">
             <Provider>
-                <div className="tela-fundo">
-                    <img src="/assets/images/Background.png" alt="" />
-                </div>
 
                 <ZapContato />
                 <BalaoMensagem />
@@ -30,6 +27,11 @@ export const Dashboard = () => {
                 <Manutencao />
 
                 <Local />
+
+                <div className="tela-fundo ">
+                    <img className='desktop' src="/assets/images/Background.png" alt="" />
+                    <img className='mobille' src="/assets/images/mobille-b.png" alt="" />
+                </div>
             </Provider> 
         </section>
     )

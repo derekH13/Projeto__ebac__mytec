@@ -5,6 +5,10 @@ import '../../../../styles/styles.css'
 function Manutencao(){
     return(
 <section className="manutencao">
+
+    <div className="mobille">
+        <img src="./assets/images/hero-2-mobille.png" alt="" className="mobille" />
+    </div>
     
     <div className="manutencao__content">
         <h1 className='title--big'>
@@ -39,7 +43,8 @@ function Manutencao(){
          </ul>
      
     </div>
-    <img src="./assets/images/hero-2.png" alt="" />
+
+    <img className='desktop' src="./assets/images/hero-2.png" alt="" />
 </section>
     )
 }

@@ -8,17 +8,51 @@
     font-family: "Poppins", sans-serif;
 }
 
+
+
+
+.home{
+    background-image: url('../Background.png');
+    background-attachment: fixed;
+
+    // @media (max-width:1200px) {
+    //     background-image: url('../mobille-b.png');
+    // }
+}
+
+
+
 .tela-fundo{
 height: 100vh;
 width: 100%;
 position: fixed;
 
-img{
-    height: 100%;
-    width: 100%;
+    img{
+        height: 100%;
+        width: 100%;
 
+    }
 }
+
+.desktop{
+    display: inline;
+
+    @media (max-width:1200px) {
+        display: none;
+    }
 }
+
+.mobille{
+    display: none;
+
+    @media (max-width:1200px) {
+        display: inline;
+    }
+}
+
+
+
+
 
 .text--gradient{
     background:linear-gradient(to right, #bc00da, #9400ec, #4d00ff);
@@ -50,6 +84,14 @@ img{
     color: var.$corTexto;
     font-size: 36px;
     font-weight: 500;
+
+    @media (max-width:1200px) {
+        font-size: 28px;
+        height: max-content;
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        
+    }
 }
 
 .bold{
