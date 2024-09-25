@@ -1,0 +1,84 @@
+@use 'var';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+}
+
+.tela-fundo{
+height: 100vh;
+width: 100%;
+position: fixed;
+
+img{
+    height: 100%;
+    width: 100%;
+
+}
+}
+
+.text--gradient{
+    background:linear-gradient(to right, #bc00da, #9400ec, #4d00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text{
+    color: var.$corTexto;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+
+.title--small{
+    color: var.$corTexto;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.title{
+    color: var.$corTexto;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+
+.title--big{
+    color: var.$corTexto;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.bold{
+    font-weight: 700;
+}
+
+.button{
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    cursor: pointer;
+
+    &--dark{
+        border: solid 2px var.$corTexto;
+        color: var.$corTexto;
+        background-color: transparent;
+    }
+
+    &--white{
+        background-color: var.$corTexto;
+    }
+
+    &--gradiente{
+        background-image: linear-gradient(to right,    #9400ec, #4d00ff);
+        color: var.$corTexto;
+
+    }
+
+}
+

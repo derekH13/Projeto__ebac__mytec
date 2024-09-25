@@ -1,0 +1,52 @@
+@use '../var';
+
+.hero{
+padding: 7.6vw;
+height: 100vh;
+display: flex;
+
+align-items: center;
+
+
+
+    &__imagem{
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            max-width: 90%;
+            width: 100%;
+        }
+    }
+
+    &__content{
+        max-width: 90%;
+ 
+
+        h1{
+
+            .text{
+                margin-top: 1.5rem;
+                max-width: 90%;
+            }
+            
+        }
+
+        &__buttons{
+            margin-top: 5rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            width: 500px;
+        }
+    }
+}
+
+.hero__alinhar{
+    position: absolute;
+    display: grid;
+grid-template-columns: repeat(2, 1fr);
+align-items: center;
+}
