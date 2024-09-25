@@ -17,7 +17,7 @@ export const Dashboard = () => {
         <section className="home">
             <Provider>
                 <div className="tela-fundo">
-                    <img src="/assets/images/background.png" alt="" />
+                    <img src="/assets/images/Background.png" alt="" />
                 </div>
 
                 <ZapContato />
