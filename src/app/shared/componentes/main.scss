@@ -12,13 +12,28 @@
 
 
 .home,
-.produtos{
+.produtos,
+.admin{
     background-image: url('../Background.png');
     background-attachment: fixed;
 
     // @media (max-width:1200px) {
     //     background-image: url('../mobille-b.png');
     // }
+}
+
+.admin{
+    height: max-content;
+
+
+    .container_control{
+        padding-top: 10rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        max-width: 80%;
+        margin: 0 auto;
+    }
 }
 
 
@@ -41,6 +56,16 @@
 
             @media (max-width: 670px) {
                 max-width: 95%;
+            }
+
+            .dropdown{
+
+                .btn:hover,
+                .dropdown-item.active{
+                    background-color: white;
+                    color: black;
+                }
+
             }
         }
     }

@@ -64,7 +64,9 @@ function Navbar(){
                         <a className="nav-link" href="#">Cadastro</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Gerenciar</a>
+                        <a 
+                        onClick={(e) => direcionar(e, '/pagina-Admin')}
+                        className="nav-link" href="#">Gerenciar</a>
                     </li>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
