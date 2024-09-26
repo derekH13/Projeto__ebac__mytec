@@ -11,13 +11,39 @@
 
 
 
-.home{
+.home,
+.produtos{
     background-image: url('../Background.png');
     background-attachment: fixed;
 
     // @media (max-width:1200px) {
     //     background-image: url('../mobille-b.png');
     // }
+}
+
+
+.produtos{
+    padding-top: 5rem;
+    height: max-content;
+
+    &__container__destaque{
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+
+        &__padding{
+            padding-top: 10rem;
+            max-width: 80%;
+            width: 100%;
+            margin: 0 auto;
+
+            @media (max-width: 670px) {
+                max-width: 95%;
+            }
+        }
+    }
 }
 
 
@@ -66,6 +92,12 @@ position: fixed;
     font-size: 16px;
 }
 
+.text--big{
+    color: var.$corTexto;
+    font-weight: 400;
+    font-size: 20px;
+}
+
 
 .title--small{
     color: var.$corTexto;
@@ -105,6 +137,9 @@ position: fixed;
     border-radius: 15px;
     font-size: 18px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &--dark{
         border: solid 2px var.$corTexto;

@@ -1,19 +1,23 @@
 .local{
     padding: 5.6vw;
-    height: max-content;
+    height: 100vh;
     width: 100%;
     position: relative;
     margin-top: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @media (max-width:1200px) {
         padding: 3.6vw;
+        height: max-content;
     }
 
 
     &__alinhar{
         display: flex;
         align-items: center;
-        height: 100%;
+        height: max-content;
 
 
         &__content{
@@ -64,7 +68,7 @@
                 height: 100%;
                 position: absolute;
                 right: 0;
-                animation: brilhar 10s linear infinite;
+                animation: brilhar 7s linear infinite;
 
             }
         }
@@ -78,6 +82,6 @@
     }
 
     50%{
-        opacity: 0.5;
+        opacity: 0.3;
     }
 }

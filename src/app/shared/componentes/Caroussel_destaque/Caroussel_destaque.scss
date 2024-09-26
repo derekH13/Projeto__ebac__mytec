@@ -1,0 +1,21 @@
+.carousel-indicators{
+    transform: translateY(3rem);
+}
+
+.carousel-indicators [data-bs-target]{
+    background-color: #5222c2;
+    height: 10px;
+}
+
+
+.carousel-control-next
+{
+    justify-content: end;
+    padding-right: 1rem;
+}
+
+
+.carousel-control-prev{
+    justify-content: start;
+    padding-left: 1rem;
+}

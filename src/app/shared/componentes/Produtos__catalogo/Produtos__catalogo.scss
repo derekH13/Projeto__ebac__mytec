@@ -1,0 +1,11 @@
+.produtos__catalogo{
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(226px, 1fr));
+    gap: 24px;
+
+    @media (max-width: 600px) {
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 18px;
+    }
+}

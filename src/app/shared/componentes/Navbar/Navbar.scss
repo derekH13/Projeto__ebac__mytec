@@ -1,0 +1,65 @@
+.navegation{
+height: 57px;
+width: 100%;
+position: fixed;
+background: rgba(255, 255, 255, 0);
+backdrop-filter: blur( 10.5px );
+-webkit-backdrop-filter: blur( 10.5px );
+border-radius: 10px;
+z-index: 3000;
+
+
+    .navbar__my{
+
+        .container-fluid{
+
+            &__navbar__items{
+                display: flex;
+                gap: 32px;
+
+                @media (max-width:1200px) {
+                    display: none;
+                }
+
+                &__item{
+                    text-decoration: none;
+                    color: white;
+                    font-size: 18px;
+                    width: 110px;
+                    height: 45px;
+                }
+            }
+        }
+
+
+        .navbar-brand{
+            height: 100%;
+    
+            img{
+                max-height: 30px;
+            }
+        }
+
+        .offcanvas{
+            background-color: rgb(31, 31, 31);
+            height: 100vh;
+            color: white;
+
+            ul li a{
+                color: white;
+            }
+
+
+        }
+    
+    
+        .navbar-toggler{
+            background-color:  #252525;
+        }
+    
+    }
+}
+
+.btn-close{
+    color: white;
+}

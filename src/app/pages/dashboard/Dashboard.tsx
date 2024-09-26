@@ -8,6 +8,8 @@ import Manutencao from '../../shared/componentes/Manutencao/Manutencao'
 import ZapContato from '../../shared/componentes/ZapContato/ZapContato'
 import BalaoMensagem from '../../shared/componentes/BalaoMensagem/BalaoMensagem'
 import Local from '../../shared/componentes/Local/Local'
+import Navbar from '../../shared/componentes/Navbar/Navbar'
+import Fotter from '../../shared/componentes/Fotter/Fotter'
 
 
 
@@ -17,6 +19,8 @@ export const Dashboard = () => {
         <section className="home">
             <Provider>
 
+                <Navbar />
+                
                 <ZapContato />
                 <BalaoMensagem />
 
@@ -28,10 +32,8 @@ export const Dashboard = () => {
 
                 <Local />
 
-                <div className="tela-fundo ">
-                    <img className='desktop' src="/assets/images/Background.png" alt="" />
-                    <img className='mobille' src="/assets/images/mobille-b.png" alt="" />
-                </div>
+                <Fotter />
+ 
             </Provider> 
         </section>
     )
