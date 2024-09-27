@@ -12,17 +12,17 @@ function Caroussel_destaque(){
   <div className="carousel-inner">
     <div className="carousel-item active">
 
-      <Produtos__destaque />
+      <Produtos__destaque  categoria='console'/>
 
     </div>
     <div className="carousel-item">
 
-      <Produtos__destaque />
+      <Produtos__destaque categoria='fone'/>
 
     </div>
     <div className="carousel-item">
 
-      <Produtos__destaque />
+      <Produtos__destaque categoria='celular'/>
 
     </div>
   </div>

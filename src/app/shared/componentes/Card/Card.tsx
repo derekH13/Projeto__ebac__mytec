@@ -1,21 +1,29 @@
 import '../../../../styles/styles.css'
+import { Categoria } from '../../../Interface/Interface'
 
 
-function Card(){
+type card = {
+    nome: string,
+    imagem: string,
+    preco: number,
+}
+
+
+function Card({nome, imagem, preco}: card){
     return(
         <div className='card__produtos'>
-            <img className='card__produtos__imagem' src="/assets/images/GPS.jpg" alt="" />
+            <img className='card__produtos__imagem' src={imagem} alt="" />
 
             <div className="card__produtos__content">
-                <p className="text--big">roupa nike air pro tk200 2032/2</p>
+                <p className="text--big">{nome}</p>
 
                 <div className="card__produtos__content__precos">
 
                     <div className="container__preco text-preco">
-                        R$ 44,90
+                        R$ {preco}
                     </div>
 
-                    <p className="text-preco preco-original">R$ 54,90</p>
+                    <p className="text-preco preco-original">R$ {preco + 10}</p>
 
                 </div>
 

@@ -29,7 +29,9 @@ function Navbar(){
             </a>
 
             <div className="desktop container-fluid__navbar__items ">
-                <a href="" className=" container-fluid__navbar__items__item button">
+                <a 
+                onClick={(e) => direcionar(e,'/pagina-Inicio')}
+                href="" className=" container-fluid__navbar__items__item button">
                     Inicio
                 </a>
 
@@ -44,20 +46,31 @@ function Navbar(){
                 </a>
             </div>
 
-            <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
+
+            <button className="btn button--dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                </svg>
             </button>
-            <div className="offcanvas offcanvas-end" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div className="offcanvas-header">
-                    <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Mytec</h5>
-                    <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div className="offcanvas-body">
-                    <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li className="nav-item">
+
+
+            <div className="offcanvas offcanvas-end" data-bs-scroll="true" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div className="offcanvas-header">
+                <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel">Loja Mytec</h5>
+                <button type="button" className="btn-close button--dark" data-bs-dismiss="offcanvas" aria-label="Close">
+
+                </button>
+            </div>
+            <div className="offcanvas-body">
+            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li 
+                    onClick={(e) => direcionar(e,'/pagina-Inicial')}
+                    className="nav-item">
                         <a className="nav-link active" aria-current="page" href="#">Inicial</a>
                     </li>
-                    <li className="nav-item">
+                    <li
+                    onClick={(e) => direcionar(e,'/pagina-Produtos')}
+                    className="nav-item">
                         <a className="nav-link" href="#">Produtos</a>
                     </li>
                     <li className="nav-item">
@@ -82,8 +95,9 @@ function Navbar(){
                         </ul>
                     </li>
                     </ul>
-                </div>
             </div>
+            </div>
+
         </div>
         </nav>
        </div>

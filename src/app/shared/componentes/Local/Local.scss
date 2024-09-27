@@ -51,12 +51,10 @@
         }
 
         &__imagem{
-
-            position: absolute;
             display: flex;
             align-items: center;
             right: 0;
-            height: 500px;
+            
 
             @media (max-width:1200px) {
                 position: relative;
@@ -65,7 +63,8 @@
 
 
             img{
-                height: 100%;
+                height: auto;
+                width: 500px;
                 position: absolute;
                 right: 0;
                 animation: brilhar 7s linear infinite;

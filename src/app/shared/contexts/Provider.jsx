@@ -1,6 +1,7 @@
 import { useState } from "react";
-import AppContext from "../contexts/AppContext";  // Corrected the import statement
+import AppContext from "./AppContext";  // Corrected the import statement
 import PropTypes from 'prop-types';  // Corrected 'propTypes' to 'PropTypes'
+
 
 
 // This file (Provider) is the component that will provide the information
@@ -8,25 +9,14 @@ import PropTypes from 'prop-types';  // Corrected 'propTypes' to 'PropTypes'
 // This function wraps all child components that we want to have in a context
 function Provider({children}) {
 
-    const [PokeDados, setPokeDados] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [TipoPokemon, setTipoPokemon] = useState([]);
-    const [arrayTipo, setArrayTipo] = useState([]);
-    const [CardMostrar, setCardMostrar] = useState('');
+    const [pesquisaDados, setPesquisaDados] = useState('produto')
+
 
 
     // These variables are passed to the Context
     const value = {
-        PokeDados, 
-        setPokeDados,
-        loading,
-        setLoading,
-        TipoPokemon, 
-        setTipoPokemon,
-        arrayTipo, 
-        setArrayTipo,
-        CardMostrar, 
-        setCardMostrar,
+        pesquisaDados, 
+        setPesquisaDados
     };
 
     return ( 

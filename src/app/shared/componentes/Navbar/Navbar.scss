@@ -1,6 +1,7 @@
 .navegation{
 height: 77px;
 width: 100%;
+max-width: 100%;
 position: fixed;
 background: rgba(255, 255, 255, 0);
 backdrop-filter: blur( 10.5px );
@@ -9,9 +10,13 @@ border-radius: 10px;
 z-index: 3000;
 
 
+    .btn-close{
+        background-color: rgb(224, 224, 224);
+    }
 
     .navbar__my{
         padding-top: 1rem;
+
 
         .container-fluid{
 
