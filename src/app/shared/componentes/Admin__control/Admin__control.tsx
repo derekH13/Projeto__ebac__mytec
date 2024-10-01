@@ -11,12 +11,28 @@ type props = {
 
 function Admin__control({imagem, title, onclick}: props){
 
-        const {setPesquisaDados} = useContext(AppContext)
+    const {setPesquisaDados} = useContext(AppContext)
+
+
+    function ClicouContainer(e: any){
+
+        setPesquisaDados(onclick)
+
+        const container = e.target.parentNode.parentNode
+        const containers = document.querySelectorAll('.admin__control')
+        containers.forEach(item => {
+            item.classList.remove('active')
+        })
+
+
+        container.classList.add('active')
+        
+    }
 
 
     return(
         <div
-        onClick={() => setPesquisaDados(onclick)}
+        onClick={(e) => ClicouContainer(e)}
         className='admin__control'>
             <div className="admin__control__imagem">
             <img src={imagem} alt="" />

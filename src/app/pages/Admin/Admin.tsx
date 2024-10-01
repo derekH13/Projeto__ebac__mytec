@@ -14,13 +14,15 @@ import Grafico from '../../shared/componentes/Grafico/Grafico'
 import ContainerDados from '../../shared/componentes/ContainerDados/ContainerDados'
 import Table from '../../shared/componentes/Table/Table'
 import Fotter from '../../shared/componentes/Fotter/Fotter'
+import Btn__Conjunto from '../../shared/componentes/Btn__Conjunto/Btn__Conjunto'
+import Title_admin from '../../shared/componentes/Title_admin/Title_admin'
 
 export const Admin = () => {
     return(
     <Provider>
         <section className='admin'>
 
-            <Navbar />
+            <Navbar active='none'/>
             <ZapContato />
 
             <div className="container_control interface">
@@ -29,12 +31,7 @@ export const Admin = () => {
                 <Admin__control imagem='/assets/images/control (1).jpg' title='Compras' onclick='compra'/>
             </div>
 
-            <h1 className="titulo">
-                <span className='titulo--dados interface'>
-
-                Analise de dados dos Produtos
-                </span>
-            </h1>
+            <Title_admin />
 
             <div className="interface">
                 <div className="row">
@@ -66,6 +63,9 @@ export const Admin = () => {
 
 
                 <div className="container__table">
+                    <Btn__Conjunto />
+
+
                     <Table />
                 </div>
             </div>

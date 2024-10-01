@@ -1,0 +1,65 @@
+.FormCadastro{
+    width: 90%;
+
+    @media (max-width: 993px) {
+        max-width: 400px;
+        width: 95%;
+    }
+
+    @media (max-width: 379px) {
+        max-width: 350px;
+    }
+
+    &__logo{
+        margin: 0 auto;
+        width: 300px;
+
+        @media (max-width: 993px) {
+            width: 300px;
+        }
+    }
+
+    &__form{
+        width: 100%;
+
+        label{
+            font-size: 16px;
+            font-weight: 500;
+            color: rgb(44, 44, 44);
+            margin-top: 12px;
+
+            @media (max-width: 993px) {
+                color: white;
+            }
+        }
+
+        .button--gradiente{
+            margin-top: 3rem;
+        }
+
+        &__flex{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            
+
+            .dropdown-toggle{
+                background-image: linear-gradient(to right, #9400ec, #4d00ff);
+                color: white;
+                height: 44px;
+            }
+
+            .dropdown-menu li a{
+                transition: all .2s ease;
+
+                &:hover{
+                    background-color: #4d00ff;
+                    color: white;
+                }
+            }
+            
+
+        }
+    }
+}

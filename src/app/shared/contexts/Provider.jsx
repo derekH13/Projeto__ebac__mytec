@@ -10,13 +10,16 @@ import PropTypes from 'prop-types';  // Corrected 'propTypes' to 'PropTypes'
 function Provider({children}) {
 
     const [pesquisaDados, setPesquisaDados] = useState('produto')
+    const [abrirFrom, setAbrirForm] = useState(false)
 
 
 
     // These variables are passed to the Context
     const value = {
         pesquisaDados, 
-        setPesquisaDados
+        setPesquisaDados,
+        abrirFrom, 
+        setAbrirForm
     };
 
     return ( 

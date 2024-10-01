@@ -1,0 +1,45 @@
+.Btn__Conjunto{
+    display: flex;
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+    gap: 24px;
+    
+
+
+    .button{
+        max-width: 170px;
+        font-weight: 500;
+        transition: all .2s ease;
+        height: 45px;
+
+        &__green{
+            border: 2px solid green;
+            color: green;
+
+            &:hover{
+                background-color: green;
+                color: white;
+            }
+        }
+
+        &__yellow{
+            border: 2px solid rgb(218, 205, 24);
+            color: rgb(218, 205, 24);
+
+            &:hover{
+                background-color: rgb(218, 205, 24);
+                color: white;
+            }
+        }
+
+        &__red{
+            border: 2px solid rgb(204, 24, 24);
+            color: rgb(204, 24, 24);
+
+            &:hover{
+                background-color: rgb(204, 24, 24);
+                color: white;
+            }
+        }
+    }
+}

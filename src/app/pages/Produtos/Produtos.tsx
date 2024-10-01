@@ -15,7 +15,7 @@ export const Produtos = () =>{
     return(
         <Provider>
 
-        <Navbar />
+        <Navbar active='produto'/>
 
             <section className='produtos'>
                 

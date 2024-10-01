@@ -1,8 +1,12 @@
+import { useNavigate } from 'react-router-dom'
 import '../../../../styles/styles.css'
 
 
 
 function Hero(){
+    const navegar = useNavigate()
+
+
     return(
         <section className='hero'>
            <div className="hero__alinhar">
@@ -27,7 +31,9 @@ function Hero(){
                     </div>
 
                     <div className="hero__content__buttons">
-                        <button className='button button--gradiente'>
+                        <button
+                        onClick={() => navegar('/pagina-Produtos')}
+                        className='button button--gradiente'>
                         Produtos
                         </button>
 

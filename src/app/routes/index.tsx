@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes as Switch, Navigate} from "react-router-dom"
-import { Admin, Dashboard, Produtos } from "../pages";
+import { Admin, Cadastro, Dashboard, Produtos } from "../pages";
 
 
 //config do react route dom padrão
@@ -16,6 +16,8 @@ export const Routes = () => {
             <Route path="/pagina-Produtos" element={<Produtos />} /> 
 
             <Route path="/pagina-Admin" element={<Admin />} /> 
+
+            <Route path="/pagina-Cadastro" element={<Cadastro />} />
 
 
            {/* se a url não se encaixar com nenhuma a cima */}

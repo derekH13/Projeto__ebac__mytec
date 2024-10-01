@@ -1,6 +1,6 @@
 export type TipoDados = 'produto' | 'compra' | 'usuario'
 export type tipoCategoria = 'celular' | 'televisão' | 'fone' | 'eletronico' | 'carregador' | 'console' | 'tablet'
-
+export type methodos = 'POST' | 'DELETE' | 'PUT'
 
 export type DadosType = {
     id: number,

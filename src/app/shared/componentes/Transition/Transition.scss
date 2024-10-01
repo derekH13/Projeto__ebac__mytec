@@ -1,0 +1,45 @@
+.transition{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    right: 0;
+    background-color: rgb(22, 22, 22);
+    z-index: 3000;
+    left: 100%;
+    animation: transicao 1.5s ;
+
+    
+    @media (max-width: 997px) {
+        display: none;
+    }
+    
+
+    &__segundo{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        right: 0;
+        background-image: linear-gradient(to right, #9400ec, #4d00ff);
+        z-index: 3001;
+        left: 100%;
+        animation: transicao 1s;
+
+        @media (max-width: 997px) {
+            animation: transicao 1.2s;
+        }
+    
+    }
+}
+
+
+@keyframes transicao {
+    100%{
+        left: 100%;
+    }
+
+    0%{
+        left: 0;
+    }
+}

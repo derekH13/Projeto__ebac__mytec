@@ -56,3 +56,17 @@ max-height: 250px;
 h1{
     color: #237b86;
 }
+
+.admin__control.active{
+    border: 1px solid rgb(255, 255, 255) ;
+
+    img{
+        transform: scale(1.2);
+        opacity: .4;
+    }
+
+    h1{
+        color: rgb(255, 255, 255);
+    }
+
+}

@@ -1,19 +1,42 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import '../../../../styles/styles.css'
 
 import { useNavigate } from 'react-router-dom'
 
 
-function Navbar(){
+type props = {
+    active: 'produto' | 'inicio' | 'cadastro' | 'none'
+}
+
+
+function Navbar({active}: props){
 
     const navegar = useNavigate()
+    const navInicio = useRef<HTMLAnchorElement>(null);
+    const navCadastro = useRef<HTMLAnchorElement>(null);
+    const navProduto = useRef<HTMLAnchorElement>(null);
 
 
     function direcionar(e: any, url: string){
         e.preventDefault()
-
         navegar(url)
     }
+
+
+    useEffect(() => {
+        if(navCadastro.current) navCadastro.current.classList.remove('button--dark')
+        if(navInicio.current) navInicio.current.classList.remove('button--dark')
+        if(navProduto.current) navProduto.current.classList.remove('button--dark')
+
+        if(active === 'inicio'){
+            if(navInicio.current) navInicio.current.classList.add('button--dark')
+        }else if(active === 'produto'){
+            if(navProduto.current) navProduto.current.classList.add('button--dark')
+        }else if(active === 'cadastro'){
+            if(navCadastro.current) navCadastro.current.classList.add('button--dark')
+        }
+
+    }, [active])
 
 
 
@@ -25,23 +48,32 @@ function Navbar(){
         >
         <div className="container-fluid">
             <a className="navbar-brand" href="#">
-                <img src="/assets/images/logo.png" alt="" />
+                <img 
+                onClick={(e) => direcionar(e,'/pagina-Inicio')}
+                src="/assets/images/logo.png" alt="" />
             </a>
 
             <div className="desktop container-fluid__navbar__items ">
-                <a 
-                onClick={(e) => direcionar(e,'/pagina-Inicio')}
-                href="" className=" container-fluid__navbar__items__item button">
-                    Inicio
-                </a>
+
 
                 <a
+                ref={navProduto}
                 onClick={(e) => direcionar(e, '/pagina-Produtos')}
-                href="" className="container-fluid__navbar__items__item button button--dark">
+                href="" className="container-fluid__navbar__items__item button">
                     Produto
                 </a>
 
-                <a href="" className="container-fluid__navbar__items__item button">
+                <a 
+                ref={navInicio}
+                onClick={(e) => direcionar(e,'/pagina-Inicio')}
+                href="" className=" container-fluid__navbar__items__item button  button--dark">
+                    Inicio
+                </a>
+
+                <a 
+                ref={navCadastro}
+                onClick={(e) => direcionar(e,'/pagina-Cadastro')}
+                href="" className="container-fluid__navbar__items__item button">
                     Cadastro
                 </a>
             </div>
@@ -73,7 +105,14 @@ function Navbar(){
                     className="nav-item">
                         <a className="nav-link" href="#">Produtos</a>
                     </li>
-                    <li className="nav-item">
+                    <li
+                    onClick={(e) => direcionar(e,'/pagina-Produtos')}
+                    className="nav-item">
+                        <a className="nav-link" href="#">Carrinho</a>
+                    </li>
+                    <li
+                    onClick={(e) => direcionar(e,'/pagina-Cadastro')}
+                    className="nav-item">
                         <a className="nav-link" href="#">Cadastro</a>
                     </li>
                     <li className="nav-item">

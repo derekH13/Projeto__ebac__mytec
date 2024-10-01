@@ -19,7 +19,7 @@ export const Dashboard = () => {
         <section className="home">
             <Provider>
 
-                <Navbar />
+                <Navbar active='inicio'/>
                 
                 <ZapContato />
                 <BalaoMensagem />

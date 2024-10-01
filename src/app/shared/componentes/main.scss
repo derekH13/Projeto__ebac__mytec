@@ -261,6 +261,7 @@ position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all .5s;
 
     &--dark{
         border: solid 2px var.$corTexto;
@@ -275,8 +276,43 @@ position: fixed;
     &--gradiente{
         background-image: linear-gradient(to right,    #9400ec, #4d00ff);
         color: var.$corTexto;
+        transition: all .3s ease;
+        
+
+        &:hover{
+            transition: all .3s ease;
+            background-image: none;
+            border: solid 2px #7700ff;
+            color: #7700ff;
+            font-weight: 500;
+        }
 
     }
 
 }
 
+
+.input{
+
+    &--dark{
+        background-color: rgb(228, 228, 228);
+        border: none;
+        border-radius: 10px;
+        padding: 8px 7px;
+        border: solid 2px  #4c00ff00;
+        width: 100%;
+
+        @media (max-width: 697px) {
+            padding: 4px 7px;
+            border-radius: 7px;
+        }
+
+        &:focus{
+            outline: none;
+            border: solid 2px  #4d00ff;
+        }
+      
+    }
+
+
+}

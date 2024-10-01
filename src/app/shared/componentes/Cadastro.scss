@@ -1,0 +1,51 @@
+.cadastro{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+    @media (max-width: 993px) {
+        background-image: url('../Background.png');
+        background-attachment: fixed;
+        background-size: cover;
+        width: 100%;
+    }
+
+
+
+    .col-lg-9,
+    .col-lg-3{
+        padding: 0;
+    }
+
+    &__imagem{
+        height: 100vh;
+        
+        
+        @media (max-width: 993px) {
+            display: none;
+        }
+        
+        img{
+            height: 100%;
+            width: 100%;
+
+            
+            @media (max-width: 993px) {
+                display: none;
+            }
+        }
+    }
+
+    .row{
+        gap: 0;
+
+        .container__formCadastro{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+    }
+}
+

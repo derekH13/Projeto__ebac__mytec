@@ -1,4 +1,4 @@
-import { TipoDados, DadosType, tipoCategoria,  Categoria} from "../Interface/Interface";
+import { TipoDados, DadosType, tipoCategoria,  Categoria, methodos} from "../Interface/Interface";
 
 
 export class Util{
@@ -32,6 +32,38 @@ export class Util{
             }
 
             const result: Categoria[] = await response.json()
+
+            return result
+
+        }catch(error){
+            console.error(error)
+            return undefined
+        }
+    }
+
+
+
+    //crud Produtos
+    static async crudProdutos(objeto: Categoria, methodo: methodos){
+        console.log(objeto);
+        
+        try{
+            const response = await fetch(`https://derek576.pythonanywhere.com/api/produto/data/`, {
+                method: methodo,
+                headers: {
+                    'Content-Type': 'application/json' 
+                },
+                body: JSON.stringify(objeto) 
+            }
+            )
+
+            if(!response.ok){
+                throw new Error(`falha na requisição ${response.status}`)
+            }
+
+            const result = await response.json()
+            console.log('requisição feita com suceeso');
+            
 
             return result
 

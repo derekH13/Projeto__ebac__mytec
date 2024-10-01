@@ -39,7 +39,7 @@ export const objCategoria: Categoria[] = [
         nome_produto: "iPhone 15",
         descricao_produto: "O iPhone 15 Pro tem design robusto e leve em titânio aeroespacial. Na parte de trás, vidro matte texturizado e, na frente, Ceramic Shield mais resistente que qualquer vidro de smartphone. Ele também é durão contra respingos, água e poeira (1).",
         categoria_produto: "celular",
-        imagem_produto: "https://fastshopbr.vtexassets.com/arquivos/ids/198118/0_AEMTUV3BEAPTO_PRD_1500_1.jpg?v=638588594744930000",
+        imagem_produto: "https://i.pinimg.com/564x/e4/39/89/e439896ca261671d3e98607ec5c93fc1.jpg",
         preco_produto: "7153.00",
         estoque_produto: 2
     },

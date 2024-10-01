@@ -55,7 +55,6 @@ function Table(){
     },[pesquisaDados])
       
 
-    console.log(dados);
 
 
 
