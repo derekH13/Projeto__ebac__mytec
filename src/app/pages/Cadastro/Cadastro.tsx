@@ -22,7 +22,7 @@ export function Cadastro(){
                     </div>
 
                     <div className="col-xxl-3 col-lg-4 col-sm-12 container__formCadastro">
-                        <FormCadastro />
+                        <FormCadastro identificacao={false} methodo='POST' logo={true}/>
                     </div>
                 </div>
 

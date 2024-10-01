@@ -33,3 +33,12 @@ export type Categoria = {
     preco_produto: string,
     estoque_produto: number,
 }
+
+export type User = {
+    id: number,
+    nome: string,
+    email: string,
+    genero: string,
+    idade: number,
+    senha: string,
+}

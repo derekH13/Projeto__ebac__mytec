@@ -70,3 +70,23 @@ z-index: 3000;
 .btn-close{
     color: white;
 }
+
+
+.IconCart{
+    position: relative;
+
+    span{
+        position: absolute;
+        height: 22px;
+        width: 22px;
+        border-radius: 50%;
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+        color: white;
+        margin-top: -11px;
+        margin-left: 18px;
+    }
+}

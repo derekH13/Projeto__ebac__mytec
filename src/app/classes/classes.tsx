@@ -1,4 +1,4 @@
-import { Categoria, methodos } from "../Interface/Interface";
+import { Categoria, methodos, User } from "../Interface/Interface";
 import { Util } from "../Util/Util";
 
 export class ClassProduto{
@@ -43,5 +43,54 @@ export class ClassProduto{
         Util.crudProdutos(produtoObj, methodo) 
     }
 } 
+
+export class Usuario{
+    id: number;
+    nome: string;
+    email: string;
+    genero: string;
+    idade: number;
+    senha: string;
+
+    constructor(
+        id: number,
+        nome: string,
+        email: string,
+        genero: string,
+        idade: number,
+        senha: string,
+    ){
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.genero = genero;
+        this.idade = idade;
+        this.senha = senha;
+    }
+
+    CrudUsuario(methodo : methodos){
+        const objUsuario: User = {
+            id: this.id,
+            nome: this.nome,
+            email: this.email,
+            genero: this.genero,
+            idade: this.idade,
+            senha: this.senha,
+        }
+
+        console.log(objUsuario);
+        
+
+        Util.crudUser(objUsuario, methodo)
+        
+
+    }
+    
+
+
+}
+
+
+
 
 // add function de get post delete

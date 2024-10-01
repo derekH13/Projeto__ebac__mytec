@@ -1,20 +1,45 @@
 import { useRef } from 'react'
 import '../../../../styles/styles.css'
+import { methodos, User } from '../../../Interface/Interface'
+import { Usuario } from '../../../classes/classes'
 
-function FormCadastro(){
 
+
+
+type props = {
+    identificacao: boolean
+    methodo: methodos
+    logo: boolean
+}
+
+
+
+
+function FormCadastro({identificacao, methodo, logo}: props){
+
+    const id = useRef(0)
     const nome = useRef('')
     const email = useRef('')
     const senha = useRef('')
     const senhaR = useRef('')
-    const idade = useRef('')
+    const idade = useRef(0)
     const genero = useRef('')
 
 
     function mandarCadastro(e: any){
         e.preventDefault()
 
-        console.log(nome.current, email.current, senha.current, genero.current);
+
+        const User = new Usuario(
+            id.current,
+            nome.current,
+            email.current,
+            genero.current,
+            idade.current,
+            senha.current,
+        )
+
+        User.CrudUsuario(methodo)
         
     }
 
@@ -26,11 +51,26 @@ function FormCadastro(){
 
     return(
         <div className='FormCadastro'>
-            <img className='FormCadastro__logo' src="/assets/images/logo.png" alt="" />
+            {
+                logo? <img className='FormCadastro__logo' src="/assets/images/logo.png" alt="" /> : ''
+            }
             
             <form 
             onSubmit={(e) => mandarCadastro(e)}
             action="" className='FormCadastro__form'>
+
+        {
+            identificacao? <div>
+                <label htmlFor="nome">Id:</label>
+                <input 
+                onChange={(e) => id.current = parseInt(e.target.value)}
+                type="text" required id='id' className='input--dark'/>
+            </div>
+            : ''
+        }
+
+
+               
                     
                 <label htmlFor="nome">Nome:</label>
                 <input 
@@ -56,7 +96,7 @@ function FormCadastro(){
                 <label htmlFor="Idade">Idade:</label>
                 <div className="FormCadastro__form__flex">
                         <input 
-                        onChange={(e) => idade.current = e.target.value}
+                        onChange={(e) => idade.current = parseInt( e.target.value)}
                         type="text" required id='Idade' className='input--dark'/>
                   
 

@@ -63,3 +63,27 @@
         }
     }
 }
+
+.window-admin{
+
+    &__form{
+
+        .FormCadastro{
+            width: 100%;
+
+            &__form{
+
+                label{
+                    margin-top: 0px;
+                }
+
+                &__flex{
+
+                    input{
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+        }
+    }
+}

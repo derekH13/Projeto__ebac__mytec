@@ -6,11 +6,13 @@ import Form_Admin from '../Form_Admin/Form_Admin'
 import { useContext, useRef } from 'react'
 import AppContext from '../../contexts/AppContext'
 import { methodos } from '../../../Interface/Interface'
+import FormCadastro from '../FormCadastro/FormCadastro'
+import ContainerFormCadastro from '../ContainerFormCadastro/ContainerFormCadastro'
 
 
 function Btn__Conjunto(){
 
-const {abrirFrom, setAbrirForm} = useContext(AppContext)
+const {abrirFrom, setAbrirForm, pesquisaDados, setPesquisaDados} = useContext(AppContext)
 const tipoMethod = useRef<methodos>('POST')
 const idAbrir = useRef(false)
 
@@ -29,8 +31,14 @@ const formMethod = (item: methodos, aparecer: boolean) => {
         <section>
 
         {
-            abrirFrom? <Form_Admin id={idAbrir.current} methodo={tipoMethod.current}/> : ''
+            (abrirFrom && pesquisaDados === 'produto')? <Form_Admin id={idAbrir.current} methodo={tipoMethod.current}/> : ''
         }
+
+        
+        {
+            (abrirFrom && pesquisaDados === 'usuario')? <ContainerFormCadastro identificacao={idAbrir.current} methodo={tipoMethod.current} /> : ''
+        }
+
 
         
 

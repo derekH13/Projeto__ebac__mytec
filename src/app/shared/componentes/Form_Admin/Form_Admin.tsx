@@ -104,7 +104,7 @@ function Form_Admin({ id, methodo }: props){
                     </div>
                 </div>
 
-                <button type="submit" className='button button--gradiente'>Cadastrar</button>
+                <button type="submit" className='button button--gradiente my-btn'>Cadastrar</button>
             </form>
         </div>
     )
