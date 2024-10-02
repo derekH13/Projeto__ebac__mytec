@@ -20,10 +20,24 @@ function Card({nome, imagem, preco}: card){
 function pegaProduto(e: any){
     const pai = e.target.parentNode
     const titleElement = pai.querySelector('.text--big')
+    const priceElement = pai.querySelector('.text-preco')
+    const imagemElement = pai.parentNode.querySelector('img')
+
     const nomeTitle = titleElement.textContent
+    const price = priceElement.textContent
+    const img = imagemElement.src
+    
 
     //usado apenas para recaregar a pagina de icon após o click no card
     setCarrinho([...carrinho, nomeTitle])
+
+    const objCarrinho = {
+        title: nomeTitle,
+        image: img,
+        preco: price
+    }
+
+
 
     //procura um local storage
     const x  = localStorage.getItem('carrinho');
@@ -41,7 +55,7 @@ function pegaProduto(e: any){
             const result = JSON.parse(savedCarrinho)
 
             //add o array do carrinho mais o novo elemento
-            localStorage.setItem('carrinho', JSON.stringify([...result, nomeTitle]))
+            localStorage.setItem('carrinho', JSON.stringify([...result, objCarrinho]))
         }
 
         
@@ -63,9 +77,9 @@ function pegaProduto(e: any){
 
                 <div className="card__produtos__content__precos">
 
-                    <div className="container__preco text-preco">
+                    <p className="container__preco text-preco">
                         R$ {preco}
-                    </div>
+                    </p>
 
                     <p className="text-preco preco-original">R$ {preco + 10}</p>
 

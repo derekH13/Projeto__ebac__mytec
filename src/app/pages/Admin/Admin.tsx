@@ -16,6 +16,7 @@ import Table from '../../shared/componentes/Table/Table'
 import Fotter from '../../shared/componentes/Fotter/Fotter'
 import Btn__Conjunto from '../../shared/componentes/Btn__Conjunto/Btn__Conjunto'
 import Title_admin from '../../shared/componentes/Title_admin/Title_admin'
+import Admin_ContainerGrafico from '../../shared/componentes/Admin_ContainerGrafico/Admin_ContainerGrafico'
 
 export const Admin = () => {
     return(
@@ -45,7 +46,7 @@ export const Admin = () => {
                                 <ContainerDados />
                            
                         </div>
-                        <Grafico />
+                        <Admin_ContainerGrafico tipo='usuario'/>
                     </div>
 
                     <div className="col-lg-6 col-sm-12">
@@ -57,7 +58,7 @@ export const Admin = () => {
                                 <ContainerDados />
                             
                         </div>
-                        <Grafico />
+                        <Admin_ContainerGrafico tipo='produto'/>
                     </div>
                 </div>
 

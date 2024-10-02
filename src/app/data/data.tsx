@@ -60,5 +60,23 @@ export const objCategoria: Categoria[] = [
         imagem_produto: "https://i.pinimg.com/564x/e4/39/89/e439896ca261671d3e98607ec5c93fc1.jpg",
         preco_produto: "4199.00",
         estoque_produto: 5
+    },
+    {
+        id_produto: 7,
+        "nome_produto": "iPhone 14",
+        descricao_produto: "Claro! Aqui está uma descrição em texto do iPhone 14:\r\n\r\nO iPhone 14, lançado pela Apple em setembro de 2022, é um smartphone de alta performance e design sofisticado. Com uma tela Super Retina XDR de 6,1 polegadas, o dispositivo oferece uma experiência visual impressionante, com uma resolução de 2532 x 1170 pixels e tecnologia OLED que proporciona cores vibrantes e contraste profundo.",
+        categoria_produto: "celular",
+        imagem_produto: "https://i.pinimg.com/564x/e4/39/89/e439896ca261671d3e98607ec5c93fc1.jpg",
+        preco_produto: "4199.00",
+        estoque_produto: 5
+    },
+    {
+        id_produto: 7,
+        "nome_produto": "iPhone 14",
+        descricao_produto: "Claro! Aqui está uma descrição em texto do iPhone 14:\r\n\r\nO iPhone 14, lançado pela Apple em setembro de 2022, é um smartphone de alta performance e design sofisticado. Com uma tela Super Retina XDR de 6,1 polegadas, o dispositivo oferece uma experiência visual impressionante, com uma resolução de 2532 x 1170 pixels e tecnologia OLED que proporciona cores vibrantes e contraste profundo.",
+        categoria_produto: "celular",
+        imagem_produto: "https://i.pinimg.com/564x/e4/39/89/e439896ca261671d3e98607ec5c93fc1.jpg",
+        preco_produto: "4199.00",
+        estoque_produto: 5
     }
 ]

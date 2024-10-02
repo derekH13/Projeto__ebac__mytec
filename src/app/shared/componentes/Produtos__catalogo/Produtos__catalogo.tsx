@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import '../../../../styles/styles.css'
 import Card from '../Card/Card'
 import { Util } from '../../../Util/Util'
@@ -6,19 +6,23 @@ import { Util } from '../../../Util/Util'
 
 import { objCategoria } from '../../../data/data'
 import { Categoria } from '../../../Interface/Interface'
+import AppContext from '../../contexts/AppContext'
 
 function Produtos__catalogo(){
 
     const [dadosCategoria, setDadosCategoria] = useState<Categoria[]>(objCategoria)
+    const {pesquisaCatalogo, setPesquisaCatalogo} = useContext(AppContext)
 
-useEffect(() => {
- Util.ProdutosCategoria('celular').then((data) => {
-
-    if(data) setDadosCategoria(data) 
 
     
+
+useEffect(() => {
+ Util.ProdutosCategoria(pesquisaCatalogo).then((data) => {
+
+    if(data) setDadosCategoria(data) 
+    
  })
-}, [])
+}, [pesquisaCatalogo])
 
 
 console.log(dadosCategoria);

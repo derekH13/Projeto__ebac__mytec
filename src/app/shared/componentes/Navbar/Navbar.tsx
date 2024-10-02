@@ -117,11 +117,6 @@ function Navbar({active}: props){
                         <a className="nav-link" href="#">Produtos</a>
                     </li>
                     <li
-                    onClick={(e) => direcionar(e,'/pagina-Produtos')}
-                    className="nav-item">
-                        <a className="nav-link" href="#">Carrinho</a>
-                    </li>
-                    <li
                     onClick={(e) => direcionar(e,'/pagina-Cadastro')}
                     className="nav-item">
                         <a className="nav-link" href="#">Cadastro</a>

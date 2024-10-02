@@ -1,0 +1,53 @@
+.Cart__Card{
+    display: flex;
+    border: solid 1px #333;
+    padding: 10px;
+    height: 125px;
+
+    img{
+        max-width: 30%;
+    }
+
+    &__content{
+        padding-left: 1rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &__flex{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .title{
+                font-size: 18px;
+                font-weight: 400;
+                height: 24px;
+                overflow: hidden;
+                color: #f1f1f1;     
+
+            }
+            
+        }
+
+        &__prices{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            font-size: 18px;
+
+            .price{
+                padding: 5px;
+                border-radius: 10px;
+                background-image: linear-gradient(to right, #9400ec, #4d00ff);
+            }
+
+            .price__Original{
+                text-decoration: line-through;
+            }
+        }
+    }
+
+}

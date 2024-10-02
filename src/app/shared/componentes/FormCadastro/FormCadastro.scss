@@ -25,12 +25,9 @@
         label{
             font-size: 16px;
             font-weight: 500;
-            color: rgb(44, 44, 44);
+            color: rgb(192, 192, 192);
             margin-top: 12px;
 
-            @media (max-width: 993px) {
-                color: white;
-            }
         }
 
         .button--gradiente{
@@ -75,6 +72,8 @@
 
                 label{
                     margin-top: 0px;
+                    color: rgb(17, 17, 17);
+                    font-weight: 500;
                 }
 
                 &__flex{
