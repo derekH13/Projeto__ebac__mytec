@@ -22,12 +22,25 @@ function pegaProduto(e: any){
     const titleElement = pai.querySelector('.text--big')
     const nomeTitle = titleElement.textContent
 
+    //usado apenas para recaregar a pagina de icon após o click no card
+    setCarrinho([...carrinho, nomeTitle])
+
+    //procura um local storage
+    const x  = localStorage.getItem('carrinho');
+
+    //se não existir um local storage
+    if(!x){
+        localStorage.setItem('carrinho', JSON.stringify([]))
+    }
+    
+    //se titleElement foi buscado, pega o array carrinho do local storage
     if(titleElement){
         const savedCarrinho = localStorage.getItem('carrinho');
 
         if(savedCarrinho) {
             const result = JSON.parse(savedCarrinho)
 
+            //add o array do carrinho mais o novo elemento
             localStorage.setItem('carrinho', JSON.stringify([...result, nomeTitle]))
         }
 

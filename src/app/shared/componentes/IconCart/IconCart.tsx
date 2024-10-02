@@ -7,11 +7,19 @@ import Provider from '../../contexts/Provider'
 
 function IconCart(){
     const { carrinho, setCarrinho } =  useContext(AppContext)
-   
+    let result: any
 
+    const savedCarrinho = localStorage.getItem('carrinho')
 
+    if(savedCarrinho){
+         result = JSON.parse(savedCarrinho)
+        
+    }
 
+    useEffect(() => {
+        console.log(result);
 
+    }, [carrinho])
 
 
 
@@ -20,7 +28,7 @@ function IconCart(){
             <div className='IconCart'>
             <span>
                 {
-                   
+                   result.length
                 }
             </span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" className="bi bi-cart-plus-fill" viewBox="0 0 16 16">
