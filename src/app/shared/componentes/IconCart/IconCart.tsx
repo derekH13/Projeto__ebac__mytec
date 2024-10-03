@@ -54,7 +54,7 @@ console.log(result);
                 <h5 className="offcanvas-title title" id="offcanvasScrollingLabel ">Carrinho de compras</h5>
                 <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div className="offcanvas-body">
+            <div className="offcanvas-body content__cart">
                 
 
                 {
@@ -65,6 +65,20 @@ console.log(result);
 
 
 
+
+            </div>
+
+            <div className="iconCart__flex ">
+                <div className='button button--gradiente'>
+                <h3 className="preco__total ">
+                    R$ 2500.00
+
+
+                    <svg id='svg' style={{display: 'inline'}} className="w-6 h-6 text-gray-800 dark:text-white " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M8 7V6a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1M3 18v-7a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Zm8-3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
+                </svg>
+                </h3>
+                </div>
 
             </div>
         </div>

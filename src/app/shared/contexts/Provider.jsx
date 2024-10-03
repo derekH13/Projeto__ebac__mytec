@@ -13,6 +13,7 @@ function Provider({children}) {
     const [abrirFrom, setAbrirForm] = useState(false)
     const [carrinho, setCarrinho] = useState([])
     const [pesquisaCatalogo, setPesquisaCatalogo] = useState('celular')
+    const [ loginCadastro, setLoginCadastro] = useState(true)
 
 
 
@@ -25,7 +26,9 @@ function Provider({children}) {
         carrinho, 
         setCarrinho,
         pesquisaCatalogo, 
-        setPesquisaCatalogo
+        setPesquisaCatalogo,
+        loginCadastro, 
+        setLoginCadastro
     };
 
     return ( 

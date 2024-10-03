@@ -12,7 +12,8 @@
 
     &__logo{
         margin: 0 auto;
-        width: 300px;
+        width: 200px;
+        padding-bottom: 10px;
 
         @media (max-width: 993px) {
             width: 300px;
@@ -32,6 +33,14 @@
 
         .button--gradiente{
             margin-top: 3rem;
+        }
+
+        .text{
+            color: #ffffff;
+            text-align: center;
+            padding-top: 22px;
+            text-decoration: underline;
+            cursor: pointer;
         }
 
         &__flex{

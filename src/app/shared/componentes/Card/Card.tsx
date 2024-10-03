@@ -31,11 +31,7 @@ function pegaProduto(e: any){
     //usado apenas para recaregar a pagina de icon após o click no card
     setCarrinho([...carrinho, nomeTitle])
 
-    const objCarrinho = {
-        title: nomeTitle,
-        image: img,
-        preco: price
-    }
+
 
 
 
@@ -53,6 +49,14 @@ function pegaProduto(e: any){
 
         if(savedCarrinho) {
             const result = JSON.parse(savedCarrinho)
+
+            const objCarrinho = {
+                title: nomeTitle,
+                image: img,
+                preco: price,
+                id: result.length
+            }
+
 
             //add o array do carrinho mais o novo elemento
             localStorage.setItem('carrinho', JSON.stringify([...result, objCarrinho]))

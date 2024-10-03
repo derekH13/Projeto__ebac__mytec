@@ -1,7 +1,8 @@
-import { useRef } from 'react'
+import { useContext, useRef } from 'react'
 import '../../../../styles/styles.css'
 import { methodos, User } from '../../../Interface/Interface'
 import { Usuario } from '../../../classes/classes'
+import AppContext from '../../contexts/AppContext'
 
 
 
@@ -16,6 +17,9 @@ type props = {
 
 
 function FormCadastro({identificacao, methodo, logo}: props){
+
+    const {loginCadastro, setLoginCadastro} = useContext(AppContext)
+
 
     const id = useRef(0)
     const nome = useRef('')
@@ -131,6 +135,10 @@ function FormCadastro({identificacao, methodo, logo}: props){
                 </div>
 
                 <button type='submit' className='button button--gradiente'>Cadastrar</button>
+
+                <p 
+                onClick={() => setLoginCadastro(!loginCadastro)}
+                className='text'>ja tenho uma conta, click aqui para fazer o login</p>
             </form>
         </div>
     )

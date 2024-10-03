@@ -2,8 +2,11 @@ import { useContext } from 'react'
 import '../../../../styles/styles.css'
 import AppContext from '../../contexts/AppContext'
 
+type props = {
+    text: string
+}
 
-function Title_admin(){
+function Title_admin({text}: props){
 
     const { pesquisaDados, setPesquisaDados } = useContext(AppContext)
 
@@ -12,7 +15,7 @@ function Title_admin(){
         <h1 className="titulo">
         <span className='titulo--dados interface'>
 
-        Analise de dados dos {pesquisaDados}
+        {text} {pesquisaDados}
         </span>
     </h1>
     )

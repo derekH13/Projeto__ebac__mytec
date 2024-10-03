@@ -1,0 +1,56 @@
+.IconCart{
+
+    span{
+        z-index: 100;
+    }
+
+
+    svg{
+        transition: all .3s ease;
+
+        &:hover{
+            transform: scale(0.9);
+            
+        }
+    }
+}
+
+
+
+#offcanvasScrolling{
+
+    .content__cart{
+        max-height: 80%;
+        
+    
+
+    }
+
+}
+
+.iconCart__flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 90%;
+    max-height: 70px;
+    margin: 0 auto;
+    transform: translateY(1rem);
+    
+    
+
+    svg{
+        display: inline-block;
+        margin-left: .5rem;
+
+    }
+
+    .preco__total{
+        display: flex;
+        font-size: 30px;
+        font-weight: 500;
+        
+    }
+
+}

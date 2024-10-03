@@ -1,11 +1,18 @@
+import { useContext } from 'react'
 import '../../../styles/styles.css'
 import FormCadastro from '../../shared/componentes/FormCadastro/FormCadastro'
 import Navbar from '../../shared/componentes/Navbar/Navbar'
 import Transition from '../../shared/componentes/Transition/Transition'
 import Provider from '../../shared/contexts/Provider'
+import AppContext from '../../shared/contexts/AppContext'
+import LoginOuCadastro from '../../shared/componentes/loginOuCadastro/LoginOuCadastro'
 
 
 export function Cadastro(){
+
+   
+
+
     return(
         <Provider>
             <section className="cadastro">
@@ -22,7 +29,8 @@ export function Cadastro(){
                     </div>
 
                     <div className="col-xxl-3 col-lg-4 col-sm-12 container__formCadastro">
-                        <FormCadastro identificacao={false} methodo='POST' logo={true}/>
+ 
+                        <LoginOuCadastro />
                     </div>
                 </div>
 

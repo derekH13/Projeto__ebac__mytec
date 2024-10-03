@@ -32,7 +32,7 @@ export const Admin = () => {
                 <Admin__control imagem='/assets/images/control (1).jpg' title='Compras' onclick='compra'/>
             </div>
 
-            <Title_admin />
+            <Title_admin text='Analise de dados dos'/>
 
             <div className="interface">
                 <div className="row">

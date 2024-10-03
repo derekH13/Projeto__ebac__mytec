@@ -6,6 +6,7 @@ import Navbar from '../../shared/componentes/Navbar/Navbar'
 import Produto__dorpDown from '../../shared/componentes/Produto__dorpDown/Produto__dorpDown'
 import Produtos__catalogo from '../../shared/componentes/Produtos__catalogo/Produtos__catalogo'
 import Produtos__destaque from '../../shared/componentes/Produtos__destaque/Produtos__destaque'
+import Title_admin from '../../shared/componentes/Title_admin/Title_admin'
 import ZapContato from '../../shared/componentes/ZapContato/ZapContato'
 import Provider from '../../shared/contexts/Provider'
 
@@ -25,6 +26,8 @@ export const Produtos = () =>{
                 <ZapContato />
 
             <div className="produtos__container__destaque">
+
+                
 
                 <Caroussel_destaque />
 
