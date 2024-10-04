@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AppContext from "./AppContext";  // Corrected the import statement
 import PropTypes from 'prop-types';  // Corrected 'propTypes' to 'PropTypes'
+import { Util } from "../../Util/Util";
 
 
 
@@ -11,10 +12,9 @@ function Provider({children}) {
 
     const [pesquisaDados, setPesquisaDados] = useState('produto')
     const [abrirFrom, setAbrirForm] = useState(false)
-    const [carrinho, setCarrinho] = useState([])
+    const [carrinho, setCarrinho] = useState(Util.LocalStage)
     const [pesquisaCatalogo, setPesquisaCatalogo] = useState('celular')
     const [ loginCadastro, setLoginCadastro] = useState(true)
-
 
 
     // These variables are passed to the Context
@@ -28,7 +28,7 @@ function Provider({children}) {
         pesquisaCatalogo, 
         setPesquisaCatalogo,
         loginCadastro, 
-        setLoginCadastro
+        setLoginCadastro,
     };
 
     return ( 

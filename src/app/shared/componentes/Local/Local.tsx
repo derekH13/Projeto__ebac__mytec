@@ -1,11 +1,24 @@
+import { motion } from 'framer-motion'
 import '../../../../styles/styles.css'
+
 
 
 function Local(){
     return(
     <section className="local">
       <div className="local__alinhar">
-        <div className="local__alinhar__content">
+        <motion.div
+             initial={{  opacity: 0, y: 50 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             transition={{
+                 duration: 1,
+                 ease: "easeInOut",
+                 delay: 0.3,
+                 type: "spring",
+                 stiffness: 100,
+                 damping: 10
+             }}
+        className="local__alinhar__content">
                 <h2 className='title--big'>
                     Visite nossa loja, localizada no coração da cidade de <span className="text--gradient bold">São paulo</span>, 
                     no <span className="text--gradient bold">bairro são nicolau, rua igarapé n° 20 </span>
@@ -23,7 +36,7 @@ function Local(){
 
 
                 </p>
-        </div>
+        </motion.div>
 
         <div className="local__alinhar__imagem desktop">
             <img className='desktop' src="/assets/images/local.png" alt="" />

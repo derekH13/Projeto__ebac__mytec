@@ -1,9 +1,22 @@
+import { motion } from 'framer-motion'
 import '../../../../styles/styles.css'
 import Produtos__destaque from '../Produtos__destaque/Produtos__destaque'
 
+
 function Caroussel_destaque(){
     return(
-<div id="carouselExampleIndicators" className="carousel slide">
+<motion.div
+initial={{opacity: 0, scale: 0.98}}
+animate={{opacity: 1, scale: 1}}
+transition={{
+  duration: 1,
+  ease: "easeInOut",
+  delay: 0.3,
+  type: "spring",
+
+}}
+
+id="carouselExampleIndicators" className="carousel slide">
   <div className="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -34,7 +47,7 @@ function Caroussel_destaque(){
     <span className="carousel-control-next-icon" aria-hidden="true"></span>
     <span className="visually-hidden">Next</span>
   </button>
-</div>
+</motion.div>
     )
 }
 

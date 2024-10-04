@@ -1,6 +1,18 @@
 import { TipoDados, DadosType, tipoCategoria,  Categoria, methodos, User} from "../Interface/Interface";
 
 
+
+
+type local = {
+    title: string,
+    imagem: string,
+    price: number
+    id: number
+}
+
+
+
+
 export class Util{
 
 
@@ -115,5 +127,18 @@ console.log(methodo);
             console.error(error)
             return undefined
         }
+    }
+
+
+    static LocalStage(): local[]{
+        let result
+ 
+        const savedCarrinho = localStorage.getItem('carrinho')
+        if(savedCarrinho){
+            result = savedCarrinho ? JSON.parse(savedCarrinho) : []
+            
+        }
+
+        return result
     }
 }

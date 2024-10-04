@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import '../../../../styles/styles.css'
 import { Categoria } from '../../../Interface/Interface'
 import AppContext from '../../contexts/AppContext'
@@ -17,6 +17,12 @@ function Card({nome, imagem, preco}: card){
 
 
 
+
+
+    
+
+
+
 function pegaProduto(e: any){
     const pai = e.target.parentNode
     const titleElement = pai.querySelector('.text--big')
@@ -24,12 +30,19 @@ function pegaProduto(e: any){
     const imagemElement = pai.parentNode.querySelector('img')
 
     const nomeTitle = titleElement.textContent
-    const price = priceElement.textContent
+    const priceCompleto = priceElement.textContent
     const img = imagemElement.src
+
+    const price = priceCompleto.split(' ')
     
 
-    //usado apenas para recaregar a pagina de icon após o click no card
-    setCarrinho([...carrinho, nomeTitle])
+
+
+    //gera um numero aleatorio para fazer um id especifico a cada produto
+    const number = Math.floor(Math.random() * 100);
+    
+
+
 
 
 
@@ -47,16 +60,18 @@ function pegaProduto(e: any){
     if(titleElement){
         const savedCarrinho = localStorage.getItem('carrinho');
 
-        if(savedCarrinho) {
+        if(savedCarrinho && number ) {
             const result = JSON.parse(savedCarrinho)
 
             const objCarrinho = {
                 title: nomeTitle,
                 image: img,
-                preco: price,
-                id: result.length
+                preco: price[1],
+                id: result.length * number
             }
 
+            //item que serve para iterar na aba de cart
+            setCarrinho([...result, objCarrinho])
 
             //add o array do carrinho mais o novo elemento
             localStorage.setItem('carrinho', JSON.stringify([...result, objCarrinho]))
@@ -64,8 +79,6 @@ function pegaProduto(e: any){
 
         
     }
-
-    console.log(carrinho.length);
     
     
 }

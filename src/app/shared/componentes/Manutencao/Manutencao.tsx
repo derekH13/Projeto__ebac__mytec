@@ -1,8 +1,13 @@
+import { motion } from 'framer-motion'
 import '../../../../styles/styles.css'
 
 
 
 function Manutencao(){
+
+
+
+
     return(
 <section className="manutencao">
 
@@ -10,7 +15,18 @@ function Manutencao(){
         <img src="./assets/images/hero-2-mobille.png" alt="" className="mobille" />
     </div>
     
-    <div className="manutencao__content">
+    <motion.div
+     initial={{  opacity: 0, y: 50 }}
+     whileInView={{ opacity: 1, y: 0 }}
+     transition={{
+        duration: 1,
+        ease: "easeInOut",
+        delay: 0.3,
+        type: "spring",
+        stiffness: 100,
+        damping: 10
+     }}
+    className="manutencao__content">
         <h1 className='title--big'>
         <span className="bold text--gradient"> Devolva a vida</span> ao seu celular!
             Fazemos consertos rápidos e <span className=" bold">eficazes.</span>
@@ -42,7 +58,7 @@ function Manutencao(){
             </li>
          </ul>
      
-    </div>
+    </motion.div>
 
     <img className='desktop' src="./assets/images/hero-2.png" alt="" />
 </section>

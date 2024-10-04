@@ -11,25 +11,57 @@ type Typecart = {
     title: string,
     image: string,
     preco: number
+    id: number
 }
 
 
 function IconCart(){
+
+    
     const { carrinho, setCarrinho } =  useContext(AppContext)
-    const [arrayCart, setArrayCart] = useState<Categoria[][]>() 
     let result: Typecart[] = []
 
     const savedCarrinho = localStorage.getItem('carrinho')
 
     if(savedCarrinho){
          result = JSON.parse(savedCarrinho)
+    }
+ 
+
+
+
+    
+    // Função para deletar o item do carrinho
+    function deleteCart(e: React.MouseEvent<HTMLButtonElement>) {
+        const result = Util.LocalStage()
+
+        //pega o elemento 
+        const elementCart = e.currentTarget; 
+        const idToDelete = parseInt(elementCart.dataset.id as string); // Pega o data-id
+
+        //filtra todo menos o id deletado
+        const deleteId = result.filter(item => item.id !== idToDelete)
+
+        //faz a pagina recarregar
+        setCarrinho(deleteId)
+        
+        const newCart = JSON.stringify(deleteId)
+        localStorage.setItem('carrinho', newCart)
+
         
     }
-    
-console.log(result);
 
-  
-    
+
+    //retorna o valor total do cart
+    function valorTotal(): number{
+        const soma: number = result.reduce((acumulador, Item) =>{
+            return acumulador + +Item.preco
+        }, 0)
+        return soma
+    }
+
+
+
 
     return(
         <Provider>
@@ -58,9 +90,41 @@ console.log(result);
                 
 
                 {
-                    result && (
-                        result.map((item, index) => <Cart__Card title={item.title} imagem={item.image} price={item.preco}/>)
-                    )
+  
+                    result && result.map((item, index) => (
+                        <div className='Cart__Card'>
+                        <img src={item.image} alt="" />
+            
+                        <div className="Cart__Card__content">
+                            <div className="Cart__Card__content__flex">
+                                <h3 className="title">{item.title}</h3>
+            
+                            <button 
+                            onClick={(e) => deleteCart(e)}
+                            data-id={item.id}
+                            type='button'>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" className="bi bi-x-lg" viewBox="0 0 16 16">
+                                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                                </svg>
+                            </button>
+            
+            
+                            </div>
+            
+                            <div className="Cart__Card__content__prices">
+                                <h3 className='price'>
+                                    {item.preco}
+                                </h3>
+            
+                                <h3 className='price__Original'>
+                                     {item.preco}
+                                </h3>
+                            </div>
+                        </div>
+            
+                    </div>
+                    ))
+                    
                 }
 
 
@@ -71,7 +135,7 @@ console.log(result);
             <div className="iconCart__flex ">
                 <div className='button button--gradiente'>
                 <h3 className="preco__total ">
-                    R$ 2500.00
+                    R$ {valorTotal()}
 
 
                     <svg id='svg' style={{display: 'inline'}} className="w-6 h-6 text-gray-800 dark:text-white " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24">
