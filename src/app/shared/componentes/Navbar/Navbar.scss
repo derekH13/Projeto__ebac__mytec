@@ -34,6 +34,11 @@ z-index: 3000;
                     font-size: 18px;
                     width: 110px;
                     height: 45px;
+
+                    &:hover{
+                        color: #5410d1;
+                        font-weight: 600;
+                    }
                 }
             }
         }

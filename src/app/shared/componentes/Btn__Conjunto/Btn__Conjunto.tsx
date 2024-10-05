@@ -30,9 +30,9 @@ const formMethod = (item: methodos, aparecer: boolean) => {
     return(
         <section>
 
-        {
+        {/* {
             (abrirFrom && pesquisaDados === 'produto')? <Form_Admin id={idAbrir.current} methodo={tipoMethod.current}/> : ''
-        }
+        } */}
 
         
         {
