@@ -1,0 +1,38 @@
+.alertContainer{
+    box-shadow: 0 8px 32px 0 rgba(190, 190, 190, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+
+     h1{
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+     }
+
+     p{
+        font-weight: 500;
+        font-size: 18px;
+        color: black;
+     }
+
+     div{
+        animation: carregar 4.5s linear forwards;
+        color: transparent;
+        height: 5px;
+        background-color: white;
+        margin-top: 5px;
+     }
+}
+
+@keyframes carregar {
+    0%{
+        width: 100%;
+    }
+
+    100%{
+        width: 0%;
+    }
+}

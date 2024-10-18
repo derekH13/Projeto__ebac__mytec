@@ -43,8 +43,11 @@ useEffect(() => {
         className='produtos__catalogo'>
 
         {
-            dadosCategoria.map((item) => <Card nome={item.nome_produto} imagem={item.imagem_produto} preco={parseInt(item.preco_produto)} />)
+            dadosCategoria.map((item) => {
+                return <Card nome={item.nome_produto} imagem={item.imagem_produto} preco={parseInt(item.preco_produto)}  desc={item.descricao_produto} />
+            } )
         }
+    
 
 
         </motion.div>

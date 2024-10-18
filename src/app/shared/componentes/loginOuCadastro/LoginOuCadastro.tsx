@@ -16,7 +16,7 @@ function LoginOuCadastro(){
 
 
 {
-    loginCadastro? <FormCadastro identificacao={false} methodo='POST' logo={true}/>
+    loginCadastro? <FormCadastro textButtom='cadastrar' identificacao={false} methodo='POST' logo={true}/>
     : <Cadastro__login />
 }
 

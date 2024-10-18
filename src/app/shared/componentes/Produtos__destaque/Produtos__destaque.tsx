@@ -27,10 +27,10 @@ function Produtos__destaque({ categoria }: props){
 
     return(
         <div className='Produtos__destaque'>
-          <Card  nome={dataCategoria[0].nome_produto}  imagem={dataCategoria[0].imagem_produto} preco={parseInt(dataCategoria[0].preco_produto)} />
-          <Card  nome={dataCategoria[1].nome_produto}  imagem={dataCategoria[1].imagem_produto} preco={parseInt(dataCategoria[1].preco_produto)} />
-          <Card  nome={dataCategoria[2].nome_produto}  imagem={dataCategoria[2].imagem_produto} preco={parseInt(dataCategoria[2].preco_produto)} />
-          <Card  nome={dataCategoria[3].nome_produto}  imagem={dataCategoria[3].imagem_produto} preco={parseInt(dataCategoria[3].preco_produto)} />
+          <Card  nome={dataCategoria[0].nome_produto}  imagem={dataCategoria[0].imagem_produto} preco={parseInt(dataCategoria[0].preco_produto)} desc={dataCategoria[0].descricao_produto} />
+          <Card  nome={dataCategoria[1].nome_produto}  imagem={dataCategoria[1].imagem_produto} preco={parseInt(dataCategoria[1].preco_produto)} desc={dataCategoria[1].descricao_produto}/>
+          <Card  nome={dataCategoria[2].nome_produto}  imagem={dataCategoria[2].imagem_produto} preco={parseInt(dataCategoria[2].preco_produto)} desc={dataCategoria[2].descricao_produto}/>
+          <Card  nome={dataCategoria[3].nome_produto}  imagem={dataCategoria[3].imagem_produto} preco={parseInt(dataCategoria[3].preco_produto)} desc={dataCategoria[3].descricao_produto}/>
         </div>
     )
 }

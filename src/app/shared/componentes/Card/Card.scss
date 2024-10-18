@@ -8,7 +8,7 @@
     -webkit-backdrop-filter: blur( 3.5px );
     border-radius: 15px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    max-height: 480px;
+    max-height: 500px;
     height: max-content;
     max-width: 362px;
 
@@ -17,10 +17,12 @@
         width: 100%;
         border-radius: 15px;
         height: 200px;
+        object-fit: fill;
 
         @media (max-width: 600px) {
             height: 160px;
         }
+
 
 
     }
@@ -30,9 +32,20 @@
         position: relative;
         height: 100%;
 
+        .descricao{
+            color: white;
+            font-size: 14px;
+            line-height: 22px;
+            height: 66px;
+     
+            overflow: hidden;
+            margin-top: 8px;
+
+        }
+
         .text--big{
             font-size: 18px;
-            height: 54px;
+            height: 27px;
             overflow: hidden;
 
             @media (max-width: 600px) {
@@ -43,7 +56,7 @@
         }
 
         button{
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             bottom: 0;
             background-color:white;
             color: black;

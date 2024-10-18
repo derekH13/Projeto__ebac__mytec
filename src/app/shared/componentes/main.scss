@@ -51,7 +51,8 @@ html{
 
 .home,
 .produtos,
-.admin{
+.admin,
+.Dados{
     background-image: url('../Background.png');
     background-attachment: fixed;
     background-size: cover;
@@ -125,6 +126,69 @@ html{
     @media (max-width: 1200px) {
         max-width: 95%;
         
+    }
+}
+
+.Dados{
+    min-height: 100vh;
+
+
+    &__form{
+        padding-top: 196px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .alinhar__button__dados{
+            max-width: 350px;
+           
+        }
+    }
+}
+
+.alinhar__input{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 24px;
+
+    @media (max-width: 697px) {
+        gap: 8px;
+    }
+}
+
+.alinhar__input1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 24px;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0px;
+    }
+}
+
+.alinhar__input2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 24px;
+
+    @media (max-width: 697px) {
+        gap: 8px;
+    }
+}
+
+.alinhar__input3{
+    display: grid;
+    grid-template-columns: auto 90px auto;
+    align-items: center;
+    gap: 24px;
+
+    @media (max-width: 697px) {
+        gap: 8px;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -260,6 +324,7 @@ position: fixed;
     cursor: pointer;
     display: flex;
     justify-content: center;
+    gap: 4px;
     align-items: center;
     transition: all .5s;
 

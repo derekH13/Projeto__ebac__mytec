@@ -2,16 +2,18 @@ import { useContext, useEffect, useState } from 'react'
 import '../../../../styles/styles.css'
 import { Categoria } from '../../../Interface/Interface'
 import AppContext from '../../contexts/AppContext'
+import { Util } from '../../../Util/Util'
 
 
 type card = {
     nome: string,
     imagem: string,
     preco: number,
+    desc: string
 }
 
 
-function Card({nome, imagem, preco}: card){
+function Card({nome, imagem, preco, desc}: card){
     const { carrinho, setCarrinho } = useContext(AppContext)
 
 
@@ -83,7 +85,12 @@ function pegaProduto(e: any){
     
 }
 
+//calculando o desconto
+const valorDesconto = Util.calcularDesconto(preco, 5)
 
+//formatando para ter virgula
+const desconto = Util.FormatarPreco(valorDesconto)
+const valor = Util.FormatarPreco(preco)
 
     return(
         <div className='card__produtos'>
@@ -92,13 +99,17 @@ function pegaProduto(e: any){
             <div className="card__produtos__content">
                 <p className="text--big">{nome}</p>
 
+                <p className="descricao">
+                    {Util.descDiminuir(desc)}
+                </p>
+
                 <div className="card__produtos__content__precos">
 
                     <p className="container__preco text-preco">
-                        R$ {preco}
+                        R$ {desconto}
                     </p>
 
-                    <p className="text-preco preco-original">R$ {preco + 10}</p>
+                    <p className="text-preco preco-original">R$ {valor}</p>
 
                 </div>
 

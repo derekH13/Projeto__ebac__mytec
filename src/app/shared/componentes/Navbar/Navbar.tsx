@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import IconCart from '../IconCart/IconCart'
 import { App } from '../../../App'
 import AppContext from '../../contexts/AppContext'
+import { RootReducer } from '../../../../store/store'
+import { useSelector } from 'react-redux'
 
 
 type props = {
@@ -15,6 +17,7 @@ type props = {
 function Navbar({active}: props){
 
     const { carrinho } = useContext(AppContext)
+    const EstaLogado = useSelector((state: RootReducer) => state.login)
 
     const navegar = useNavigate()
     const navInicio = useRef<HTMLAnchorElement>(null);
@@ -44,6 +47,8 @@ function Navbar({active}: props){
     }, [active])
 
 
+    const umAdmin = (EstaLogado.itens.findIndex(item => item.email === 'derek.cbed@outlook.com'));
+    
 
 
     return(
@@ -119,13 +124,22 @@ function Navbar({active}: props){
                     <li
                     onClick={(e) => direcionar(e,'/pagina-Cadastro')}
                     className="nav-item">
-                        <a className="nav-link" href="#">Cadastro</a>
+                        <a className="nav-link" href="#">Cadastro Usuario</a>
                     </li>
+                    <li
+                    onClick={(e) => direcionar(e,'/pagina-Cadastro-Endereço')}
+                    className="nav-item">
+                        <a className="nav-link" href="#">Cadastro de dados</a>
+                    </li>
+                   {
+                    !(umAdmin < 0) && (
                     <li className="nav-item">
                         <a 
                         onClick={(e) => direcionar(e, '/pagina-Admin')}
                         className="nav-link" href="#">Gerenciar</a>
                     </li>
+                    )
+                   }
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Dropdown

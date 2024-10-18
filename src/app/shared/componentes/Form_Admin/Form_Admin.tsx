@@ -66,43 +66,51 @@ function Form_Admin({ id, methodo }: props){
                     required type="text" placeholder='id' className='input--dark input__primerio'/> : ''
                 }
                 
-                
-                <label htmlFor="nome" className='text'>Nome</label>
-                <input
-                onChange={(e) => nome.current = e.target.value}
-                type="text" id='nome' className='input--dark'/>
-                
-                <label htmlFor="descricao" className='text'>Descrição</label>
-                <input
-                onChange={(e) => descricao.current = e.target.value}
-                type="text"  id='descricao' className='input--dark'/>
-                
-                <label htmlFor="categoria" className='text'>Categoria</label>
-                <input
-                onChange={(e) => categoria.current = e.target.value}
-                type="text"  id='categoria' className='input--dark'/>
-                
-                <label htmlFor="UlrImagem" className='text'>Url da imagem</label>
-                <input
-                onChange={(e) => image.current = e.target.value}
-                type="text"  id='UlrImagem' className='input--dark'/>
-                
-                <div className="flex__form">
+
+                {
+                    (!(methodo === 'DELETE')) &&  (
+                        <div>
+                    <label htmlFor="nome" className='text'>Nome</label>
+                    <input
+                    onChange={(e) => nome.current = e.target.value}
+                    type="text" id='nome' className='input--dark'/>
                     
-                   <div>
-                        <label htmlFor="preco" className='text'>Preço</label>
-                        <input
-                        onChange={(e) => preco.current = e.target.value}
-                        type="text" id='preco'  className='input--dark'/>
-                   </div>
+                    <label htmlFor="descricao" className='text'>Descrição</label>
+                    <input
+                    onChange={(e) => descricao.current = e.target.value}
+                    type="text"  id='descricao' className='input--dark'/>
                     
+                    <label htmlFor="categoria" className='text'>Categoria</label>
+                    <input
+                    onChange={(e) => categoria.current = e.target.value}
+                    type="text"  id='categoria' className='input--dark'/>
+                    
+                    <label htmlFor="UlrImagem" className='text'>Url da imagem</label>
+                    <input
+                    onChange={(e) => image.current = e.target.value}
+                    type="text"  id='UlrImagem' className='input--dark'/>
+                    
+                    <div className="flex__form">
+                        
                     <div>
-                        <label htmlFor="quantidade" className='text'>Quantidade</label>
-                        <input
-                        onChange={(e) => quantidade.current = parseInt(e.target.value)}
-                        type="text" id='quantidade' className='input--dark'/>
+                            <label htmlFor="preco" className='text'>Preço</label>
+                            <input
+                            onChange={(e) => preco.current = e.target.value}
+                            type="text" id='preco'  className='input--dark'/>
+                    </div>
+                        
+                        <div>
+                            <label htmlFor="quantidade" className='text'>Quantidade</label>
+                            <input
+                            onChange={(e) => quantidade.current = parseInt(e.target.value)}
+                            type="text" id='quantidade' className='input--dark'/>
+                        </div>
                     </div>
                 </div>
+                    )
+                }
+                
+                
 
                 <button type="submit" className='button button--gradiente my-btn'>Cadastrar</button>
             </form>

@@ -130,6 +130,7 @@ console.log(methodo);
     }
 
 
+    //para pegar o localstage do navegador
     static LocalStage(): local[]{
         let result
  
@@ -141,4 +142,38 @@ console.log(methodo);
 
         return result
     }
+
+
+    //formatar preço
+    static FormatarPreco(preco: number): string {
+        // Converte o preço para string, arredondando para baixo
+        const parteInteira = Math.floor(preco).toString(); // Remove a parte decimal
+    
+        // Adiciona a vírgula nos separadores de milhar
+        const formatado = parteInteira.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    
+        // Retorna o preço formatado
+        return formatado;
+    }
+
+    static calcularDesconto(precoOriginal: number, percentualDesconto: number): number {
+        // Calcula o valor do desconto
+        const desconto = precoOriginal * (percentualDesconto / 100);
+        // Calcula o preço final após o desconto
+        const precoComDesconto = precoOriginal - desconto;
+        return precoComDesconto;
+    }                  
+    
+    
+    static descDiminuir(text: string){
+        if (text.length > 94){
+            return text.slice(0, 86) + '...'
+        }
+  
+        return text
+        
+    }
+    
+
 }
+

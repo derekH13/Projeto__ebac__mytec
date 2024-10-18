@@ -15,11 +15,15 @@ function Btn__Conjunto(){
 const {abrirFrom, setAbrirForm, pesquisaDados, setPesquisaDados} = useContext(AppContext)
 const tipoMethod = useRef<methodos>('POST')
 const idAbrir = useRef(false)
+const textoParaButton = useRef('')
 
-const formMethod = (item: methodos, aparecer: boolean) => {
+const formMethod = (item: methodos, aparecer: boolean, textButton: string) => {
     setAbrirForm(!abrirFrom)
+
+    //mudando as informações de parametro do form dependendo dos botao clicado
     tipoMethod.current = item
     idAbrir.current = aparecer
+    textoParaButton.current = textButton
 }
 
 
@@ -30,13 +34,13 @@ const formMethod = (item: methodos, aparecer: boolean) => {
     return(
         <section>
 
-        {/* {
+        {
             (abrirFrom && pesquisaDados === 'produto')? <Form_Admin id={idAbrir.current} methodo={tipoMethod.current}/> : ''
-        } */}
+        }
 
         
         {
-            (abrirFrom && pesquisaDados === 'usuario')? <ContainerFormCadastro identificacao={idAbrir.current} methodo={tipoMethod.current} /> : ''
+            (abrirFrom && pesquisaDados === 'usuario')? <ContainerFormCadastro textButtom={textoParaButton.current} identificacao={idAbrir.current} methodo={tipoMethod.current} /> : ''
         }
 
 
@@ -45,19 +49,19 @@ const formMethod = (item: methodos, aparecer: boolean) => {
 
         <div className='Btn__Conjunto'>
             <button
-            onClick={() => formMethod('POST', false)} 
+            onClick={() => formMethod('POST', false, 'Cadastrar')} 
             className='button button__green'>
                 Adicionar
             </button>
 
             <button
-            onClick={() => formMethod('PUT', true)} 
+            onClick={() => formMethod('PUT', true, 'Editar')} 
             className='button button__yellow'>
                 Editar
             </button>
 
             <button
-            onClick={() => formMethod('DELETE', true)} 
+            onClick={() => formMethod('DELETE', true, 'Deletar')} 
             className='button button__red'>
                 Remover
                 

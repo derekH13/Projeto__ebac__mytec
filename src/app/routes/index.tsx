@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes as Switch, Navigate} from "react-router-dom"
-import { Admin, Cadastro, Dashboard, Produtos } from "../pages";
+import { Admin, Cadastro, CadastroEndereço, Dashboard, Produtos } from "../pages";
 
 
 
@@ -20,6 +20,8 @@ export const Routes = () => {
                 <Route path="/pagina-Admin" element={<Admin />} /> 
 
                 <Route path="/pagina-Cadastro" element={<Cadastro />} />
+
+                <Route path="/pagina-Cadastro-Endereço" element={<CadastroEndereço />} />
 
 
             {/* se a url não se encaixar com nenhuma a cima */}

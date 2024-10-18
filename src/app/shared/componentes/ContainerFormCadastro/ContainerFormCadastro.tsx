@@ -7,9 +7,10 @@ import AppContext from '../../contexts/AppContext'
 type props = {
     identificacao: boolean
     methodo: methodos
+    textButtom: string
 }
 
-function ContainerFormCadastro({identificacao, methodo}: props){
+function ContainerFormCadastro({identificacao, methodo, textButtom}: props){
 
     const {abrirFrom, setAbrirForm} = useContext(AppContext)
 
@@ -27,7 +28,7 @@ function ContainerFormCadastro({identificacao, methodo}: props){
                     </svg>
                 </div>
 
-                <FormCadastro identificacao={identificacao} methodo={methodo} logo={false}/>
+                <FormCadastro textButtom={textButtom} identificacao={identificacao} methodo={methodo} logo={false}/>
             </div>
         </div>
     )
