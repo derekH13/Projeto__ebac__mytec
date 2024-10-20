@@ -6,6 +6,7 @@ import Cart__Card from '../Cart__Card/Cart__Card'
 
 import { Categoria } from '../../../Interface/Interface'
 import { Util } from '../../../Util/Util'
+import { useNavigate } from 'react-router-dom'
 
 type Typecart = {
     title: string,
@@ -16,6 +17,8 @@ type Typecart = {
 
 
 function IconCart(){
+    const {valorCart, setValorCart} = useContext(AppContext)
+    const navegar = useNavigate()
 
     
     const { carrinho, setCarrinho } =  useContext(AppContext)
@@ -53,11 +56,22 @@ function IconCart(){
 
 
     //retorna o valor total do cart
-    function valorTotal(): number{
-        const soma: number = result.reduce((acumulador, Item) =>{
-            return acumulador + +Item.preco
-        }, 0)
-        return soma
+    function valorTotal(): number {
+        const soma: number = result.reduce((acumulador, Item) => {
+            return acumulador + +Item.preco;
+        }, 0);
+
+        const total = parseFloat(soma.toFixed(3)); 
+
+        setValorCart(total)
+        
+        return total// Arredonda para 2 casas decimais
+
+    }
+
+    //funcao para direcionar para finalizar compra
+    const finalizarCompra = () =>{
+        navegar('/pagina-Cadastro-Endereço')
     }
 
 
@@ -133,15 +147,17 @@ function IconCart(){
             </div>
 
             <div className="iconCart__flex ">
-                <div className='button button--gradiente'>
-                <h3 className="preco__total ">
-                    R$ {valorTotal()}
+                <div 
+                onClick={() => finalizarCompra()}
+                className='button button--gradiente'>
+                    <h3 className="preco__total ">
+                        R$ {valorTotal()}
 
 
-                    <svg id='svg' style={{display: 'inline'}} className="w-6 h-6 text-gray-800 dark:text-white " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M8 7V6a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1M3 18v-7a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Zm8-3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
-                </svg>
-                </h3>
+                        <svg id='svg' style={{display: 'inline'}} className="w-6 h-6 text-gray-800 dark:text-white " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M8 7V6a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1M3 18v-7a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Zm8-3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
+                    </svg>
+                    </h3>
                 </div>
 
             </div>

@@ -15,6 +15,8 @@ function Provider({children}) {
     const [carrinho, setCarrinho] = useState(Util.LocalStage)
     const [pesquisaCatalogo, setPesquisaCatalogo] = useState('celular')
     const [ loginCadastro, setLoginCadastro] = useState(true)
+    const [valorCart, setValorCart] = useState()
+    const [dadosLogin, setDadosLogin] = useState()
 
 
     // These variables are passed to the Context
@@ -29,6 +31,10 @@ function Provider({children}) {
         setPesquisaCatalogo,
         loginCadastro, 
         setLoginCadastro,
+        valorCart, 
+        setValorCart,
+        dadosLogin, 
+        setDadosLogin
     };
 
     return ( 

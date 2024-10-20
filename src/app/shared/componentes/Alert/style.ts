@@ -19,7 +19,7 @@ const background = {
 export const alertEstilo = styled.div<props>`
     border: solid 4px ${(props => colorMap[props.color])};
     background: ${(props => background[props.color])};
-    position: absolute;
+    position: fixed;
     top: 77px;
     left: 10px;
     padding: 10px;

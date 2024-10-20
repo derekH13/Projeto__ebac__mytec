@@ -14,6 +14,10 @@ const loginSlice = createSlice({
     initialState,
     reducers: {
         pegarLogin: (state, action: PayloadAction<DadosType[]>) => {
+
+            //se chegou ate aqui signifaca que passou pela verificação
+            console.log(action.payload);
+            
             
             //se não for vazio (false)
             if(action.payload.length > 0){

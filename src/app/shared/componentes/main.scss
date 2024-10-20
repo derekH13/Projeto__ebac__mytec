@@ -52,7 +52,8 @@ html{
 .home,
 .produtos,
 .admin,
-.Dados{
+.Dados,
+.Dados__Bloqueio{
     background-image: url('../Background.png');
     background-attachment: fixed;
     background-size: cover;
@@ -62,6 +63,16 @@ html{
     //     background-image: url('../mobille-b.png');
     // }
     
+}
+
+.Dados__Bloqueio{
+    height: 100vh;
+
+    h1{
+        padding: 400px 0px;
+        width: 100%;
+        text-align: center;
+    }
 }
 
 .admin{
@@ -155,6 +166,10 @@ html{
     @media (max-width: 697px) {
         gap: 8px;
     }
+}
+
+.button__endereco{
+    max-width: 224px;
 }
 
 .alinhar__input1{
@@ -352,7 +367,7 @@ position: fixed;
 .input{
 
     &--dark{
-        background-color: rgb(228, 228, 228);
+        background-color: rgb(255, 255, 255);
         border: none;
         border-radius: 10px;
         padding: 8px 7px;

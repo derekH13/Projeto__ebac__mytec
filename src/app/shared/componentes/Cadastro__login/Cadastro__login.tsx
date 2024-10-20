@@ -19,6 +19,7 @@ function Cadastro__login(){
     const {loginCadastro, setLoginCadastro} = useContext(AppContext)
     const login = useSelector((state: RootReducer) => state.login)
     const dispatch = useDispatch()
+    const {dadosLogin, setDadosLogin} = useContext(AppContext)
 
     //para poder mostrar o alert e infoaLERT
     const [MostrarAlert, setMostrarAlert] = useState(false)
@@ -35,6 +36,7 @@ function Cadastro__login(){
         const result: DadosType[] | undefined = await Util.requisicaoDados('usuario').then(data => {
              return data?.filter(item => (item.email.toLowerCase() === email.toLowerCase()) && (item.senha.toLowerCase() === senha.toLowerCase()))
         })  
+        
 
         if(result) dispatch(pegarLogin(result))
 

@@ -177,3 +177,53 @@ console.log(methodo);
 
 }
 
+
+export class DadosEndereco {
+    cep: number
+    estado: string
+    cidade: string
+    bairro: string
+    numero: number
+
+    constructor(
+        cep: number,
+        estado: string,
+        cidade: string,
+        bairro: string,
+        numero: number,
+    ){
+        this.cep = cep
+        this.estado = estado
+        this.cidade = cidade
+        this.bairro = bairro
+        this.numero = numero
+    }
+}
+
+export class cartaoCredito {
+    nome: string
+    cpf: number
+    nomeCartao: string
+    numeroCartao: number
+    cvv: number
+    mesVencimento: string
+    anoVencimento: string
+
+    constructor(
+        nome: string,
+        cpf: number,
+        nomeCartao: string,
+        numeroCartao: number,
+        cvv: number,
+        mesVencimento: string,
+        anoVencimento: string,
+    ){
+        this.nome = nome
+        this.cpf = cpf
+        this.nomeCartao = nomeCartao
+        this.numeroCartao = numeroCartao
+        this.cvv = cvv
+        this.mesVencimento = mesVencimento
+        this.anoVencimento = mesVencimento
+    }
+}
