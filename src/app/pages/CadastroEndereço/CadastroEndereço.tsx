@@ -19,30 +19,42 @@ export const CadastroEndereço = () => {
     const formadepagamento = useRef<'Boleto' | 'Credito'>('Boleto')
     const [btnActive, setBtnActive] = useState<boolean>(false)
 
+    //verificar dados completos
     function finalizarCompra(){
         const Endereco = localStorage.getItem('Endereco')
         const cartaoCredito = localStorage.getItem('cartaoCredito')
 
-        if(Endereco && cartaoCredito){
-            setMostrarConfirmar(true)
-            
+        //se for boleto selecionado
+        if(btnActive) {
+            if(Endereco){
+                setMostrarConfirmar(true)
+                console.log(mostrarConfirmar);
+            }else{
+                console.log('erro ao achar cadastro de enderco');
+            }
         }else{
-            console.log('erro ao achar cadastro de enderco e cartao');
-            
+            if(Endereco && cartaoCredito){
+                setMostrarConfirmar(true)
+                console.log(mostrarConfirmar);
+            }else{
+                console.log('erro ao achar cadastro de enderco ou cartao');
+                
+            }
         }
-        
     }
 
-    console.log(Logindados);
     
+    const FecharModal = (): void => {
+        setMostrarConfirmar(false)
+    }
+   
 
-
+    
     if(formaPagamento){
         formadepagamento.current = 'Boleto'
     } else {
         formadepagamento.current = 'Credito'
     }
-        
 
     return (
     <Provider>
@@ -54,7 +66,7 @@ export const CadastroEndereço = () => {
     
                 {
                     mostrarConfirmar && (
-                        <ConfirmarCompra formadepagamento={formadepagamento.current} />
+                        <ConfirmarCompra onClick1={FecharModal} formadepagamento={formadepagamento.current} />
                     )
                 }
     

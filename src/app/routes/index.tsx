@@ -24,8 +24,8 @@ export const Routes = () => {
                 <Route path="/pagina-Cadastro-Endereço" element={<CadastroEndereço />} />
 
 
-            {/* se a url não se encaixar com nenhuma a cima */}
-            <Route path="*" element={<Navigate to="pagina-inicial" />}/>
+            {/* se a url não se encaixar com nenhuma a cima
+            <Route path="*" element={<Navigate to="pagina-inicial" />}/> */}
 
             </Switch>
             </BrowserRouter>
