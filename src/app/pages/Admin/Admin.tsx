@@ -1,6 +1,5 @@
 import '../../../styles/styles.css'
-import Chart from 'react-apexcharts'
-import ApexCharts from 'apexcharts'
+import '../../../output.css'
 
 
 import Admin__control from '../../shared/componentes/Admin__control/Admin__control'
@@ -9,8 +8,7 @@ import ZapContato from '../../shared/componentes/ZapContato/ZapContato'
 import Provider from '../../shared/contexts/Provider'
 
 
-import '../../../output.css'
-import Grafico from '../../shared/componentes/Grafico/Grafico'
+
 import ContainerDados from '../../shared/componentes/ContainerDados/ContainerDados'
 import Table from '../../shared/componentes/Table/Table'
 import Fotter from '../../shared/componentes/Fotter/Fotter'

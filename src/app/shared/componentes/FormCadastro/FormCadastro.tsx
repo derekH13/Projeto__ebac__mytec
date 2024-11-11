@@ -63,8 +63,6 @@ function FormCadastro({identificacao, methodo, logo, textButtom}: props){
             //tirar alerte depois de 2s
             setTimeout(() => {
                 setMostrarAlert(false)
-
-                navegate('/pagina-inicial')
             }, 4490)
         }catch{
 
@@ -130,12 +128,12 @@ function FormCadastro({identificacao, methodo, logo, textButtom}: props){
                        <label htmlFor="senha">Senha:</label>
                        <input 
                        onChange={(e) => senha.current = e.target.value}
-                       type="text" required id='senha' className='input--dark'/>
+                       type="password" required id='senha' className='input--dark'/>
        
                        <label htmlFor="senha">Repetir á Senha:</label>
                        <input 
                        onChange={(e) => senhaR.current = e.target.value}
-                       type="text" required id='senha' className='input--dark'/>
+                       type="password" required id='senha' className='input--dark'/>
        
        
                        <label htmlFor="Idade">Idade:</label>

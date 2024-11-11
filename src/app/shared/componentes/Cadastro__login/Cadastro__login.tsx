@@ -58,7 +58,7 @@ function Cadastro__login(){
             setTimeout(() => {
                 setMostrarAlert(false)
 
-                navegate('/pagina-inicial')  
+               
             }, 4490)
             
         }else {
@@ -108,7 +108,7 @@ function Cadastro__login(){
               <input 
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
-              type="text" 
+              type="password" 
               required 
               id='senha' 
               className='input--dark'/>
